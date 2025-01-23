@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+button{
+    cursor: pointer;
+}
+.nav-session{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    border: 1px solid red;
+}
+.nav-options{
+    border: 1px solid blue;
+    width: 40%;
+}
+.nav-options a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    width: 20%;
+    border: 1px solid brown;
+    height: 100%;
+}
+.nav-options li{
+    text-align: center;
+    border: 2px solid yellow;
+    height: 60px;
+}
+.nav-options ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-options a{
+    align-items: center;
+}
