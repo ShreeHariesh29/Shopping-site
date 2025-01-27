@@ -3,37 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoppers stop</title>
-    <link rel="stylesheet" href="./homepage.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Client side/homepage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- <div class="nav-session">
+    <div class="nav-session">
         <div class="nav-logo">
             <img src="" alt="">
         </div>
         <nav class="nav-options">
             <ul>
-                <a href=""><li>Home</li></a>
-                <a href=""><li>Products</li></a>
+                <a href="./admin-home.html"><li>Home</li></a>
+                <a href="./Add-products.html"><li>Add Products</li></a>
+                <a href="./admin-products.html"><li>Products</li></a>
                 <a href=""><li>Offers</li></a>
-                <a href=""><li>options</li></a>
+                <a href=""><li>Add to cart</li></a>
             </ul>
         </nav>
         <div class="nav-icons">
-            <a href="../Admin side/admin-home.html">admin login</a>
         </div>
-    </div> -->
-    <div id="nav-session"></div>
-    <script>
-       fetch('Navbar.html')
-       .then(response => response.text())
-       .then(Navdata => { 
-        document.getElementById('nav-session').innerHTML= Navdata
-    })
-    .catch(error => console.log("Error on loading",error));
-    </script>
+    </div>
 </body>
 </html>

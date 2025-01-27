@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./Admin-design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div id="nav-session"></div>
+    <div class="addProduct-session">
+        <div class="addProduct-form">
+            <h2>Add Product Details</h2>
+            <form action="#" id="addProduct-form">
+                <label for="name" >Product Name</label> <br>
+                <input type="text" id="productname" required> <br>
+                <label for="discription">Product Discription</label> <br>
+                <Textarea id="product-discription" rows="3" required></Textarea> <br>
+                <label for="price">Enter the Product Price</label> <br>
+                <input type="Number" id="product-price" required> <br>
+                <label for="quantity">Product Quantity</label> <br>
+                <input type="number" id="product-quantity" required> <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+
+    </div>
+    <script>
+        fetch('Admin-Navbar.html')
+        .then(response => response.text())
+        .then(Navbar => {
+            document.getElementById('nav-session').innerHTML = Navbar
+        })
+        .catch(error => console.log('Error on loading',error))
+
+        document.getElementById('addProduct-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let name = document.getElementById("productname").value;
+            let discription = document.getElementById('product-discription').value;
+            let price = document.getElementById('product-price').value;
+            let quantity = document.getElementById('product-quantity').value;
+            console.log(name);
+
+            const products = JSON.parse(localStorage.getItem('products')) || [];
+
+            const id = products.length > 0 ? products[products.length - 1].id + 1 : 1;
+            let product = {id, name, discription, price, quantity };
+
+            products.push(product);
+            
+            localStorage.setItem('products',JSON.stringify(products))
+            console.log(product, products)
+            alert('New Product Updated !')
+            this.reset();
+        })
+    </script>
 </body>
 </html>
